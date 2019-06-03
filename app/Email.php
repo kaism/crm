@@ -12,4 +12,14 @@ class Email extends Model
     {
     	return "/emails/{$this->id}";
     }
+
+    public function from_address()
+    {
+        return $this->belongsTo(EmailAddress::class, 'id');
+    }
+
+    public function to_address()
+    {
+        return $this->belongsTo(EmailAddress::class, 'id');
+    }
 }
