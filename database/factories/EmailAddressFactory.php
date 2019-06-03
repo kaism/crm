@@ -7,6 +7,9 @@ use Faker\Generator as Faker;
 
 $factory->define(EmailAddress::class, function (Faker $faker) {
     return [
-        'address' => $faker->email
+        'address' => $faker->email,
+        'client_id' => function () {
+        	return factory(App\Client::class)->create()->id;
+        }
     ];
 });
