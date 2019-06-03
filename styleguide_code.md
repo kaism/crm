@@ -84,3 +84,29 @@ php artisan make:migration create_email_addresses_table
 ```
 php artisan make:migration email_addresses
 ```
+
+## Git Commits
+* Separate model from feature work
+* Separate large laravel changes (eg install, update, auth)
+
+> Reasons: Clarity
+
+## Git Comments
+* Begin with imperative verb (eg Add, Update, Clean up)
+* Short, clear statement as title on first line
+* When necessary, add details on third line
+
+> Reasons: Conventional Git
+
+**Good**
+```
+Add client model
+
+Update email address model to include clients
+```
+
+**Bad**
+```
+clients db and tests
+```
+
