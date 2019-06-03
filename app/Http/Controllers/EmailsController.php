@@ -17,5 +17,4 @@ class EmailsController extends Controller
     {
     	return view('emails.show', compact('email'));
     }
-
 }

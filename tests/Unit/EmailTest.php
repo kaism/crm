@@ -13,9 +13,8 @@ class EmailTest extends TestCase
     /** @test */
     public function an_email_can_be_created()
     {
-        $this->withoutExceptionHandling();
         $email = factory('App\Email')->create();
-        $this->assertDatabaseHas('emails', ['message_id' => $email->message_id]);
+        $this->assertDatabaseHas('emails', ['id' => $email->id]);
     }
 
 	/** @test */
@@ -26,11 +25,15 @@ class EmailTest extends TestCase
 	}
 
 	/** @test */
-	public function an_email_has_a_to_and_from_address()
+	public function an_email_has_a_to_address()
 	{
         $email = factory('App\Email')->create();
 		$this->assertInstanceOf('App\EmailAddress', $email->to_address);
+	}
+	/** @test */
+	public function an_email_has_a_from_address()
+	{
+        $email = factory('App\Email')->create();
 		$this->assertInstanceOf('App\EmailAddress', $email->from_address);
 	}
-
 }
