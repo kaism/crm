@@ -15,9 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::group(['middleware' => 'auth'], function () {
 	Route::get('/emails', 'EmailsController@index');
 	Route::get('/emails/{email}', 'EmailsController@show');
+	
+	Route::get('/clients', 'ClientsController@index');
+	Route::get('/clients/{client}', 'ClientsController@show');
 
 	Route::get('/home', 'HomeController@index')->name('home');
 });
