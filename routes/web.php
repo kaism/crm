@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/emails', 'EmailsController@index');
+Route::get('/emails/{email}', 'EmailsController@show');
