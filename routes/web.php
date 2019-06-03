@@ -15,5 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/emails', 'EmailsController@index');
-Route::get('/emails/{email}', 'EmailsController@show');
+Route::group(['middleware' => 'auth'], function () {
+	Route::get('/emails', 'EmailsController@index');
+	Route::get('/emails/{email}', 'EmailsController@show');
+
+	Route::get('/home', 'HomeController@index')->name('home');
+});
+
+Auth::routes();

@@ -11,9 +11,20 @@ class EmailsTest extends TestCase
     use WithFaker, RefreshDatabase;
 
     /** @test */
+    public function guests_cannot_view_emails()
+    {
+        $this->get('/emails')->assertRedirect('login');
+
+        $email = factory('App\Email')->create();
+        $this->get($email->path())->assertRedirect('login');
+    }
+
+    /** @test */
     public function a_user_can_view_a_list_of_emails()
     {
         $this->withoutExceptionHandling();
+        $this->actingAs(factory('App\User')->create());
+
         $emails = factory('App\Email', 5)->create();
         $this->get('/emails')
             ->assertSee($emails[0]['from'])
@@ -29,6 +40,8 @@ class EmailsTest extends TestCase
     public function a_user_can_view_an_email()
     {
         $this->withoutExceptionHandling();
+        $this->actingAs(factory('App\User')->create());
+
         $email = factory('App\Email')->create();
         $this->get($email->path())
             ->assertSee($email->message_id)
