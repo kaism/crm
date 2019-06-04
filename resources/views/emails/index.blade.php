@@ -8,8 +8,8 @@
 	<table>
 		@forelse ($emails as $email)
 			<tr>
-				<td>{{ $email->from }}</td>
-				<td>{{ $email->to }}</td>
+				<td>{{ $email->from_address->address }}</td>
+				<td>{{ $email->to_address->address }}</td>
 				<td><a href="{{ $email->path() }}">{{ $email->subject }}</a></td>
 			</tr>
 		@empty

@@ -15,11 +15,11 @@ class Email extends Model
 
     public function from_address()
     {
-        return $this->belongsTo(EmailAddress::class, 'id');
+        return $this->belongsTo(EmailAddress::class, 'from');
     }
 
     public function to_address()
     {
-        return $this->belongsTo(EmailAddress::class, 'id');
+        return $this->belongsTo(EmailAddress::class, 'to');
     }
 }

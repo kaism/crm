@@ -27,11 +27,11 @@ class EmailsTest extends TestCase
         $this->be(factory('App\User')->create());
         $emails = factory('App\Email', 3)->create();
         $this->get('/emails')
-            ->assertSee($emails[0]['from'])
-            ->assertSee($emails[0]['to'])
-            ->assertSee($emails[0]['subject'])
-            ->assertSee($emails[1]['subject'])
-            ->assertSee($emails[2]['subject']);
+            ->assertSee($emails[0]->from_address->address)
+            ->assertSee($emails[0]->to_address->address)
+            ->assertSee($emails[0]->subject)
+            ->assertSee($emails[1]->subject)
+            ->assertSee($emails[2]->subject);
     }
 
     /** @test */
@@ -39,10 +39,11 @@ class EmailsTest extends TestCase
     {
         $this->be(factory('App\User')->create());
         $email = factory('App\Email')->create();
+
         $this->get($email->path())
             ->assertSee($email->message_id)
-            ->assertSee($email->from)
-            ->assertSee($email->to)
+            ->assertSee($email->from_address->address)
+            ->assertSee($email->to_address->address)
             ->assertSee($email->subject)
             ->assertSee($email->body);
     }
