@@ -16,6 +16,7 @@ class CreateEmailAddressesTable extends Migration
         Schema::create('email_addresses', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('client_id')->default(0);
+            $table->boolean('is_user')->default(false);
             $table->string('address');
             $table->timestamps();
         });
