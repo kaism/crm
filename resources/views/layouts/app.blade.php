@@ -18,8 +18,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="css/tailwind.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-gray-100">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
@@ -72,7 +73,16 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4 mx-2 sm:mx-5 md:mx-7 lg:mx-auto max-w-5xl">
+
+            <div class="text-center w-full text-gray-500">
+                <span class="text-gray-800 sm:text-gray-500">XS</span> |
+                <span class="sm:text-gray-800 md:text-gray-500">SM</span> |
+                <span class="md:text-gray-800 lg:text-gray-500">MD</span> |
+                <span class="lg:text-gray-800 xl:text-gray-500">LG</span> |
+                <span class="xl:text-gray-800">XL</span>
+            </div>
+
             @yield('content')
         </main>
     </div>

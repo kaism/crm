@@ -1,3 +1,13 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+.heading { @apply text-xl text-teal-700 mb-3 }
+.card { @apply mb-2 pb-1 bg-white border rounded text-gray-800 text-sm }
+.card .header { @apply bg-gray-300 px-2 pt-1 }
+@screen sm {
+	.card { @apply mb-3 }
+}
+@screen md {
+	.card { @apply mb-4 }
+}

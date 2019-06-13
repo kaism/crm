@@ -7551,6 +7551,25 @@ video {
   z-index: auto;
 }
 
+.heading { font-size: 1.25rem; color: #2c7a7b; margin-bottom: 0.75rem
+}
+
+.card { margin-bottom: 0.5rem; padding-bottom: 0.25rem; background-color: #fff; border-width: 1px; border-radius: 0.25rem; color: #2d3748; font-size: 0.875rem
+}
+
+.card .header { background-color: #e2e8f0; padding-left: 0.5rem; padding-right: 0.5rem; padding-top: 0.25rem
+}
+
+@media (min-width: 640px) {
+  .card { margin-bottom: 0.75rem
+  }
+}
+
+@media (min-width: 768px) {
+  .card { margin-bottom: 1rem
+  }
+}
+
 @media (min-width: 640px) {
   .sm\:appearance-none {
     -webkit-appearance: none;

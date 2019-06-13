@@ -16,5 +16,9 @@ class TestDataSeeder extends Seeder
         	'name' => 'Test',
         	'email' => 'test@test.com'
 	    ]);
+
+        // create 5 emails
+        factory(App\Email::class, 5)->create();
+
     }
 }

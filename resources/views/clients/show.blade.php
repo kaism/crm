@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
+@extends('layouts.app')
+
+@section('content')
 	<div>{{ $client->name }}</div>
 	<div>{{ $client->notes }}</div>
-</body>
-</html>
+@endsection
