@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-	<link href="css/tailwind.css" rel="stylesheet">
-</head>
-<body>
+@extends('layouts.app')
+
+@section('content')
 	<h1 class="bg-red-400">Clients</h1>
 	<table>
 		@forelse ($clients as $client)
@@ -16,6 +12,4 @@
 			<tr><td colspan='2'>No clients.</td></tr>
 		@endforelse
 	</table>
-
-</body>
-</html>
+@endsection

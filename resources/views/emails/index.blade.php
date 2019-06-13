@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
+@extends('layouts.app')
+
+@section('content')
 	<h1>Emails</h1>
 	<table>
 		@forelse ($emails as $email)
@@ -16,6 +13,4 @@
 			<tr><td colspan='3'>No emails.</td></tr>
 		@endforelse
 	</table>
-
-</body>
-</html>
+@endsection
