@@ -2,9 +2,10 @@
 <html>
 <head>
 	<title></title>
+	<link href="css/tailwind.css" rel="stylesheet">
 </head>
 <body>
-	<h1>Clients</h1>
+	<h1 class="bg-red-400">Clients</h1>
 	<table>
 		@forelse ($clients as $client)
 			<tr>
