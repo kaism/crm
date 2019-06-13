@@ -1,15 +1,23 @@
 @extends('layouts.app')
 
 @section('content')
-	<h1 class="bg-red-400">Clients</h1>
-	<table>
-		@forelse ($clients as $client)
-			<tr>
-				<td>{{ $client->name }}</td>
-				<td>{{ $client->notes }}</td>
-			</tr>
-		@empty
-			<tr><td colspan='2'>No clients.</td></tr>
-		@endforelse
-	</table>
+	<h1 class="heading">Clients</h1>
+
+	{{-- clients --}}
+	@if (count($clients))
+
+		@foreach ($clients as $client)
+			<div class="card">
+				<div class="header flex justify-between">
+					<div>{{ $client->name }}</div>
+					<div>{{ $client->updated_at }}</div>
+				</div>
+				<div class="p-4">{{ $client->notes }}</div>
+			</div>
+		@endforeach
+
+	@else
+		<div>No clients.</div>
+	@endif
+
 @endsection
