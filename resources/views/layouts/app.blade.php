@@ -74,6 +74,13 @@
         </nav>
 
         <main class="py-4">
+            <div class="text-center w-full text-gray-500">
+                <span class="text-gray-800 sm:text-gray-500">XS</span> |
+                <span class="sm:text-gray-800 md:text-gray-500">SM</span> |
+                <span class="md:text-gray-800 lg:text-gray-500">MD</span> |
+                <span class="lg:text-gray-800 xl:text-gray-500">LG</span> |
+                <span class="xl:text-gray-800">XL</span>
+            </div>
             @yield('content')
         </main>
     </div>
